@@ -1,5 +1,5 @@
 import config from "@/config";
-import axios, { AxiosInstance, AxiosRequestConfig } from "axios";
+import axios, { type AxiosInstance, type AxiosRequestConfig } from "axios";
 
 /**
  * 自定义响应结果封装类
@@ -32,7 +32,8 @@ const http: AxiosInstance = axios.create(axiosConfig);
  * 异常拦截处理器
  * @param error 异常信息
  */
-const errorHandler = (error) => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const errorHandler = (error: any) => {
   return new Promise(error);
 };
 
