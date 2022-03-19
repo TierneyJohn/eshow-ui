@@ -4,6 +4,8 @@ import { message } from "ant-design-vue";
 
 import { getUser, LoginType, type LoginInfo } from "@/api/user";
 import { i18nRender } from "@/locales";
+import { useAppStore } from "@/stores";
+import { initRouter } from "@/plugin/asyncRoute";
 
 const from = reactive({
   username: "",
@@ -41,8 +43,11 @@ const login = async () => {
   }
 
   loginInfo.password = from.password;
-  const user = await getUser(loginInfo);
-  console.log(user);
+  const result = await getUser(loginInfo);
+  if (result.success) {
+    useAppStore().userId = result.result;
+    initRouter();
+  }
 };
 </script>
 

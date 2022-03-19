@@ -34,5 +34,5 @@ const USER_API = {
 };
 
 export const getUser = (loginInfo: LoginInfo) => {
-  return http.post<LoginInfo, ResponseVO<User>>(USER_API.LOGIN, loginInfo);
+  return http.post<LoginInfo, ResponseVO<string>>(USER_API.LOGIN, loginInfo);
 };

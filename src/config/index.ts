@@ -1,3 +1,6 @@
+export { stage, asyncRouterMap } from "./stage";
+export type { Stage } from "./stage";
+
 export default {
   // 后端接口 URL 地址
   baseURL: "http://127.0.0.1:5000",

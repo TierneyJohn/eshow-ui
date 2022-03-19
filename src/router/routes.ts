@@ -7,12 +7,22 @@ export const routes: Array<RouteRecordRaw> = [
   },
   {
     path: "/login",
-    name: "login",
     component: () => import("@/views/Login.vue"),
   },
   {
-    path: "/home",
-    name: "home",
-    component: () => import("@/views/HomeView.vue"),
+    path: "/403",
+    component: () => import("@/views/exception/403.vue"),
+  },
+  {
+    path: "/404",
+    component: () => import("@/views/exception/404.vue"),
+  },
+  {
+    path: "/500",
+    component: () => import("@/views/exception/500.vue"),
+  },
+  {
+    path: "/:pathMatch(.*)*",
+    redirect: "/404",
   },
 ];
